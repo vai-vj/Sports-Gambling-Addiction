@@ -214,6 +214,7 @@
       margin-top:6px;
     }
 
+    /* layout for two columns on wider screens */
     @media(min-width:900px){
       .content-grid{
         display:grid;
@@ -224,6 +225,7 @@
       .side-panel{position:sticky; top:26px}
     }
 
+    /* quiz styles */
     .quiz-question{margin:10px 0; padding:10px; border-radius:8px; background:#fbfdff; border:1px solid rgba(11,59,102,0.03)}
     .radio-row{display:flex; gap:10px; flex-wrap:wrap}
     .result{padding:10px; border-radius:8px; margin-top:10px}
@@ -231,11 +233,13 @@
     .medium{background:#fff4e6; border:1px solid #ffddb3; color:#8a5a00}
     .high{background:#ffe6e6; border:1px solid #ffc5c5; color:#711010}
 
+    /* Sources modal */
     .modal-backdrop{position:fixed; inset:0; background:rgba(2,6,23,0.45); display:none; align-items:center; justify-content:center;}
     .modal{background:var(--card-bg); padding:18px; border-radius:12px; width:92%; max-width:720px; box-shadow:0 10px 30px rgba(2,6,23,0.35);}
     .modal h3{margin-top:0}
     .modal .close{float:right; background:transparent; border:none; font-size:18px; cursor:pointer; color:var(--muted)}
 
+    /* share link input */
     .copy-field{
       display:flex;
       gap:8px;
@@ -261,6 +265,7 @@
       <nav class="tabs" role="navigation" aria-label="Main">
         <button class="tab" onclick="document.getElementById('sourcesModal').style.display='flex'">Sources</button>
         <button class="tab" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Take Self-Check</button>
+        <button class="tab" onclick="printArticle()">Print</button>
       </nav>
     </header>
 
@@ -273,7 +278,81 @@
 
       <div class="content-grid" role="region">
         <article>
-          <!-- article content stays the same -->
+          <h2>A New Risk Landscape for Young Men</h2>
+          <p>The current wave of online sports betting has radically changed how people wager. Instead of having to go to a physical location, bettors can place bets with a tap on their smartphone — and this shift hasn’t just made betting more convenient; it's made it more <strong>insidious</strong>.</p>
+
+          <p>Recent polling underscores just how acute the risk is for young men. A <strong>Fairleigh Dickinson University</strong> survey found that <strong>10% of men aged 18–30</strong> scored in the “problem gambling” range on the widely used Problem Gambling Severity Index (PGSI), compared with about <strong>3% in the general population</strong>. Further, nearly <strong>45% of men 30 and under</strong> reported at least one problematic behavior associated with gambling (such as chasing losses).</p>
+
+          <p>These patterns align with academic research. A longitudinal study of young men in Australia (aged 18–25) identified frequent sports and fantasy sports gambling, higher levels of depression, and lower anxiety as key predictors of future gambling problems. Even among athlete populations, the risk is observable: a Swedish study of male athletes aged 16–20 found that almost <strong>9% of elite male athletes over 18</strong> met the PGSI threshold for problem gambling — much higher than their female peers.</p>
+
+          <h2>Financial Fallout: More Than Just Lost Bets</h2>
+          <p>The stakes go well beyond emotional distress. As states have legalized online sports betting, the financial health of some consumers has deteriorated significantly.</p>
+
+          <ul class="bullets">
+            <li><strong>Average credit scores fell</strong> (by about 2.75 points in states with mobile betting).</li>
+            <li><strong>Bankruptcy rates rose</strong>, with the likelihood of households declaring bankruptcy increasing by <strong>25–30%</strong> three to four years after legalization.</li>
+            <li><strong>Debt collections increased</strong>, translating into roughly an 8% rise in amounts sent to collections per consumer on average.</li>
+            <li>There was also a rise in auto loan delinquencies and use of debt consolidation loans.</li>
+          </ul>
+
+          <p>Importantly, harm is concentrated among <strong>young men</strong>, especially in <strong>low-income counties</strong>. One opinion piece in <em>The Washington Post</em> highlighted that credit card limits have been reduced by lenders in some states in response to deteriorating creditworthiness among young male bettors.</p>
+
+          <h2>Why Young Men Are Especially Vulnerable</h2>
+          <h3 class="small">1. Behavioral &amp; Psychological Drivers</h3>
+          <ul class="bullets">
+            <li>Frequent engagement in sports and fantasy gambling strongly predicts higher gambling problem severity.</li>
+            <li>Mental health factors: higher depression and lower anxiety correlate with greater risk in 18–25 year-old men.</li>
+            <li>This pattern suggests a possible <strong>self-medication loop</strong>, where gambling becomes a coping mechanism.</li>
+          </ul>
+
+          <h3 class="small">2. Design &amp; Technology of Betting Platforms</h3>
+          <ul class="bullets">
+            <li><strong>Frictionless mobile apps</strong> provide instant feedback, in-play betting, and constant notifications — all drivers of impulsive wagering.</li>
+            <li>Micro-bets (e.g., on single plays) create a high frequency of reinforcing events that resemble video games more than traditional wagering.</li>
+          </ul>
+
+          <h3 class="small">3. Social &amp; Cultural Factors</h3>
+          <ul class="bullets">
+            <li>Young men are more likely to follow live sports, participate in peer networks around betting, and see aggressive marketing.</li>
+            <li>Celebrity endorsements and "risk-free" offers normalize betting and downplay real financial risk.</li>
+          </ul>
+
+          <h2>The Toll: Beyond Money</h2>
+          <p>The consequences of sports gambling addiction extend beyond lost funds. Problem gamblers frequently face <strong>anxiety, depression, shame, and social isolation</strong>. Relationships break down under debt stress, and public health systems — already under strain — see rising demand for treatment. Access to addiction services is uneven across states, and not all jurisdictions require operators to fund prevention and treatment.</p>
+
+          <h2>A Regulatory Reckoning</h2>
+          <p>In response to these trends, policymakers and advocates are pushing reforms across three main areas:</p>
+
+          <h3 class="small">Advertising limits</h3>
+          <ul class="bullets">
+            <li>Restrict misleading language like “risk-free” or “no-sweat” promotions.</li>
+            <li>Limit the volume and timing of advertisements, especially during live broadcasts.</li>
+          </ul>
+
+          <h3 class="small">Product feature reforms</h3>
+          <ul class="bullets">
+            <li>Implement cooling-off delays to slow impulsive in-play bets.</li>
+            <li>Require affordability checks to prevent wagers beyond a user’s capacity to pay.</li>
+          </ul>
+
+          <h3 class="small">Treatment &amp; support funding</h3>
+          <ul class="bullets">
+            <li>Mandate operator contributions to fund state treatment programs and 24/7 digital support.</li>
+            <li>Expand self-exclusion, helplines, and peer support networks.</li>
+          </ul>
+
+          <h2>Why This Matters Now</h2>
+          <p>The rapid adoption of mobile betting means these harms are unfolding fast. Young men — already predisposed to higher risk because of behavioral, economic, and technological factors — face disproportionate consequences. Without stronger consumer protections, more lives may be destabilized by debt, addiction, and mental-health crises.</p>
+
+          <h2>What Can Be Done</h2>
+          <ul class="bullets">
+            <li><strong>Policymakers:</strong> Enact advertising restrictions, product oversight, and mandatory treatment funding.</li>
+            <li><strong>Public health advocates:</strong> Invest in prevention, research, and targeted outreach for young men.</li>
+            <li><strong>Individuals & families:</strong> Learn the warning signs, use self-exclusion tools, and seek help early.</li>
+            <li><strong>Gambling companies:</strong> Adopt harm-reduction measures, affordability checks, and transparent practices.</li>
+          </ul>
+
+          <p class="small">If you or someone you know has a gambling problem, call or text the National Problem Gambling Helpline at <strong>1-800-522-4700</strong>.</p>
         </article>
 
         <aside class="side-panel" aria-label="Interactive tools and resources">
@@ -283,6 +362,7 @@
             <div class="cta">
               <button class="btn" onclick="shareArticle()">Share</button>
               <button class="ghost" onclick="navigator.clipboard?.writeText(window.location.href).then(()=>alert('Page link copied'))">Copy Link</button>
+              <button class="ghost" onclick="printArticle()">Print</button>
             </div>
 
             <div style="margin-top:12px;">
@@ -300,7 +380,48 @@
             <h3 style="margin:0 0 8px 0; color:var(--header-bg)">Short Self-Check Quiz</h3>
             <p class="small">Answer a few quick questions — this is not a diagnosis but a prompt to seek help if results are concerning.</p>
             <div id="quiz">
-              <!-- quiz content stays the same -->
+              <div class="quiz-question">
+                <label><strong>1.</strong> Have you felt the need to bet with increasing amounts of money to get the same feeling?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q1" value="0"> No</label>
+                  <label><input type="radio" name="q1" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q1" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label><strong>2.</strong> Have you tried to stop or cut down but failed?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q2" value="0"> No</label>
+                  <label><input type="radio" name="q2" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q2" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label><strong>3.</strong> Have you chased losses (bet more to try to recover previous losses)?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q3" value="0"> No</label>
+                  <label><input type="radio" name="q3" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q3" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label><strong>4.</strong> Has gambling caused problems with relationships, work, or finances?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q4" value="0"> No</label>
+                  <label><input type="radio" name="q4" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q4" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:8px; margin-top:8px;">
+                <button class="btn" onclick="evaluateQuiz()">See Result</button>
+                <button class="ghost" onclick="resetQuiz()">Reset</button>
+              </div>
+
+              <div id="quizResult" aria-live="polite" style="margin-top:10px"></div>
             </div>
           </div>
 
@@ -328,11 +449,21 @@
     </footer>
   </div>
 
+  <!-- Sources modal -->
   <div id="sourcesModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal" role="document" aria-labelledby="sourcesTitle">
       <button class="close" onclick="document.getElementById('sourcesModal').style.display='none'">✕</button>
       <h3 id="sourcesTitle">Sources & Further Reading</h3>
-      <!-- sources content stays the same -->
+      <p class="small">Selected studies, reporting, and commentary cited in the article. (Open in a new tab.)</p>
+      <ul>
+        <li><a href="https://apnews.com/article/d4d0b7a8465e5be0b451b115cab0fb15" target="_blank" rel="noopener">AP News: Poll showing higher risk for young men (Fairleigh Dickinson University)</a></li>
+        <li><a href="https://link.springer.com/article/10.1007/s10899-025-10403-0" target="_blank" rel="noopener">Journal article: Longitudinal study on young men's gambling risk (Springer)</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37283029/" target="_blank" rel="noopener">PubMed: Study of gambling among young athletes</a></li>
+        <li><a href="https://www.anderson.ucla.edu/sites/default/files/document/2025-05/Hollenbeck_The_Financial_Consequences_of_Legalized_Sports_Gambling.pdf" target="_blank" rel="noopener">Working paper: Financial consequences of legalized sports gambling (Hollenbeck, Larsen & Proserpio)</a></li>
+        <li><a href="https://www.washingtonpost.com/opinions/2024/09/14/nfl-sports-gambling-addiction-sportsbooks-credit-scores/" target="_blank" rel="noopener">Washington Post: Opinion on credit impacts</a></li>
+        <li><a href="https://www.pewresearch.org/short-reads/2025/10/02/americans-increasingly-see-legal-sports-betting-as-a-bad-thing-for-society-and-sports/" target="_blank" rel="noopener">Pew Research Center: Public attitudes toward sports betting</a></li>
+      </ul>
+      <p class="small">If you want all sources exported to a printable PDF or to have the sources formatted as newsroom citations (AP/Chicago), I can prepare that too.</p>
       <div style="text-align:right; margin-top:8px">
         <button class="btn" onclick="document.getElementById('sourcesModal').style.display='none'">Close</button>
       </div>
@@ -340,8 +471,15 @@
   </div>
 
   <script>
+    // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // simple print helper
+    function printArticle(){
+      window.print();
+    }
+
+    // share (uses Web Share API if available)
     function shareArticle(){
       const shareData = {
         title: document.title,
@@ -351,10 +489,13 @@
       if(navigator.share){
         navigator.share(shareData).catch(()=>alert('Unable to share from this browser.'));
       } else {
-        navigator.clipboard?.writeText(window.location.href).then(()=>{alert('Link copied to clipboard');}).catch(()=>alert('Share not supported. Link copied?'));
+        navigator.clipboard?.writeText(window.location.href).then(()=>{
+          alert('Link copied to clipboard');
+        }).catch(()=>alert('Share not supported. Link copied?'));
       }
     }
 
+    // quiz logic (very simple, not diagnostic)
     function evaluateQuiz(){
       const answers = ['q1','q2','q3','q4'].map(name => {
         const selected = document.querySelector('input[name="'+name+'"]:checked');
@@ -380,6 +521,7 @@
       document.getElementById('quizResult').innerHTML = '';
     }
 
+    // accessibility: close modal with Esc and click backdrop
     document.getElementById('sourcesModal').addEventListener('click', function(e){
       if(e.target === this) this.style.display = 'none';
     });
@@ -390,6 +532,7 @@
       }
     });
 
+    // ensure modal is 'flex' when opened
     const realModal = document.getElementById('sourcesModal');
     const observer = new MutationObserver(()=> {
       if(realModal.style.display === 'flex') {
