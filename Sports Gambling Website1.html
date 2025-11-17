@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Big Bet Backfires: Addiction Crisis Hits Young Men</title>
+  <style>
+    :root{
+      --header-bg: #0b3b66; /* dark blue */
+      --accent: #0f5aa3;
+      --muted: #566d86;
+      --bg: #f6f9fb; /* very light background */
+      --card-bg: #ffffff;
+      --max-width: 980px;
+      --radius: 12px;
+      --text: #102037;
+    }
+
+    *{box-sizing: border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+    }
+
+    header.site-header{
+      background: linear-gradient(180deg, var(--header-bg), var(--accent));
+      color: white;
+      padding:18px 22px;
+      border-radius: var(--radius);
+      margin-bottom:18px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      box-shadow: 0 6px 18px rgba(11,59,102,0.12);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo {
+      width:64px;
+      height:64px;
+      border-radius:10px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:18px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .site-title{
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:0.2px;
+      margin:0;
+    }
+    .site-sub{
+      font-size:13px;
+      opacity:0.95;
+      margin:0;
+    }
+
+    nav.tabs{
+      margin-left:auto;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .tab{
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    .tab:focus{outline:2px solid rgba(255,255,255,0.18)}
+
+    main.article{
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: 0 6px 18px rgba(16,32,55,0.06);
+      margin-bottom:18px;
+    }
+
+    .meta{
+      font-size:14px;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    h1.title{
+      font-size:28px;
+      margin:6px 0 10px 0;
+      color:var(--header-bg);
+    }
+
+    h2{
+      font-size:20px;
+      margin-top:18px;
+      margin-bottom:8px;
+      color:var(--header-bg);
+      border-bottom:2px solid rgba(11,59,102,0.06);
+      padding-bottom:6px;
+    }
+
+    p{margin:12px 0;}
+
+    strong{color:var(--text); font-weight:700;}
+
+    .lead{
+      font-size:16px;
+      margin-bottom:12px;
+      color:#213547;
+    }
+
+    ul.bullets{
+      margin-left:18px;
+      margin-bottom:8px;
+    }
+
+    /* interactive panel */
+    .side-panel{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, #ffffff, #fbfdff);
+      border-radius:10px;
+      padding:14px;
+      border:1px solid rgba(16,32,55,0.04);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:8px;
+      flex-wrap:wrap;
+    }
+
+    button.btn{
+      background:var(--header-bg);
+      color:white;
+      border: none;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:700;
+      box-shadow: 0 6px 14px rgba(11,59,102,0.12);
+    }
+    button.ghost{
+      background:transparent;
+      color:var(--header-bg);
+      border:1px solid rgba(11,59,102,0.08);
+      font-weight:700;
+      padding:10px 12px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    /* collapsible */
+    .collapsible{
+      border-radius:8px;
+      overflow:hidden;
+      margin-top:8px;
+    }
+
+    .collapsible summary{
+      list-style:none;
+      cursor:pointer;
+      padding:10px 12px;
+      background:linear-gradient(90deg, rgba(15,90,163,0.06), rgba(11,59,102,0.02));
+      border:1px solid rgba(11,59,102,0.04);
+      font-weight:700;
+    }
+
+    .small{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    footer.site-footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:6px;
+    }
+
+    /* layout for two columns on wider screens */
+    @media(min-width:900px){
+      .content-grid{
+        display:grid;
+        grid-template-columns: 2fr 1fr;
+        gap:18px;
+        align-items:start;
+      }
+      .side-panel{position:sticky; top:26px}
+    }
+
+    /* quiz styles */
+    .quiz-question{margin:10px 0; padding:10px; border-radius:8px; background:#fbfdff; border:1px solid rgba(11,59,102,0.03)}
+    .radio-row{display:flex; gap:10px; flex-wrap:wrap}
+    .result{padding:10px; border-radius:8px; margin-top:10px}
+    .low{background:#e6f7ff; border:1px solid #cfeefc; color:#0b3b66}
+    .medium{background:#fff4e6; border:1px solid #ffddb3; color:#8a5a00}
+    .high{background:#ffe6e6; border:1px solid #ffc5c5; color:#711010}
+
+    /* Sources modal */
+    .modal-backdrop{position:fixed; inset:0; background:rgba(2,6,23,0.45); display:none; align-items:center; justify-content:center;}
+    .modal{background:var(--card-bg); padding:18px; border-radius:12px; width:92%; max-width:720px; box-shadow:0 10px 30px rgba(2,6,23,0.35);}
+    .modal h3{margin-top:0}
+    .modal .close{float:right; background:transparent; border:none; font-size:18px; cursor:pointer; color:var(--muted)}
+
+    /* share link input */
+    .copy-field{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .copy-field input{
+      flex:1; padding:8px; border-radius:8px; border:1px solid rgba(16,32,55,0.06)
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header class="site-header" role="banner">
+      <a class="brand" href="#" onclick="scrollToTop(event)">
+        <div class="logo" aria-hidden="true">BB</div>
+        <div>
+          <p class="site-title">The Big Bet Backfires</p>
+          <p class="site-sub">Investigative Reporting • Sports Gambling & Public Health</p>
+        </div>
+      </a>
+
+      <nav class="tabs" role="navigation" aria-label="Main">
+        <button class="tab" onclick="document.getElementById('sourcesModal').style.display='flex'">Sources</button>
+        <button class="tab" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Take Self-Check</button>
+        <button class="tab" onclick="printArticle()">Print</button>
+      </nav>
+    </header>
+
+    <main class="article" aria-labelledby="main-title">
+      <p class="meta"><strong>[Gainesville, FL]</strong> — <time datetime="2025-11-13">November 13, 2025</time></p>
+
+      <h1 class="title" id="main-title">The Big Bet Backfires: Addiction Crisis Hits Young Men Amid Sports Betting Boom</h1>
+
+      <p class="lead"><strong>The expansion of online sports betting</strong>, once heralded as a win-win for state coffers and entertainment, is producing a darker legacy: a burgeoning public health crisis, particularly among young men. As mobile apps proliferate and in-game promotions intensify, the risk of gambling addiction has grown alarmingly — and research increasingly points to young male bettors as the group most vulnerable to harm.</p>
+
+      <div class="content-grid" role="region">
+        <article>
+          <h2>A New Risk Landscape for Young Men</h2>
+          <p>The current wave of online sports betting has radically changed how people wager. Instead of having to go to a physical location, bettors can place bets with a tap on their smartphone — and this shift hasn’t just made betting more convenient; it's made it more <strong>insidious</strong>.</p>
+
+          <p>Recent polling underscores just how acute the risk is for young men. A <strong>Fairleigh Dickinson University</strong> survey found that <strong>10% of men aged 18–30</strong> scored in the “problem gambling” range on the widely used Problem Gambling Severity Index (PGSI), compared with about <strong>3% in the general population</strong>. Further, nearly <strong>45% of men 30 and under</strong> reported at least one problematic behavior associated with gambling (such as chasing losses).</p>
+
+          <p>These patterns align with academic research. A longitudinal study of young men in Australia (aged 18–25) identified frequent sports and fantasy sports gambling, higher levels of depression, and lower anxiety as key predictors of future gambling problems. Even among athlete populations, the risk is observable: a Swedish study of male athletes aged 16–20 found that almost <strong>9% of elite male athletes over 18</strong> met the PGSI threshold for problem gambling — much higher than their female peers.</p>
+
+          <h2>Financial Fallout: More Than Just Lost Bets</h2>
+          <p>The stakes go well beyond emotional distress. As states have legalized online sports betting, the financial health of some consumers has deteriorated significantly.</p>
+
+          <ul class="bullets">
+            <li><strong>Average credit scores fell</strong> (by about 2.75 points in states with mobile betting).</li>
+            <li><strong>Bankruptcy rates rose</strong>, with the likelihood of households declaring bankruptcy increasing by <strong>25–30%</strong> three to four years after legalization.</li>
+            <li><strong>Debt collections increased</strong>, translating into roughly an 8% rise in amounts sent to collections per consumer on average.</li>
+            <li>There was also a rise in auto loan delinquencies and use of debt consolidation loans.</li>
+          </ul>
+
+          <p>Importantly, harm is concentrated among <strong>young men</strong>, especially in <strong>low-income counties</strong>. One opinion piece in <em>The Washington Post</em> highlighted that credit card limits have been reduced by lenders in some states in response to deteriorating creditworthiness among young male bettors.</p>
+
+          <h2>Why Young Men Are Especially Vulnerable</h2>
+          <h3 class="small">1. Behavioral &amp; Psychological Drivers</h3>
+          <ul class="bullets">
+            <li>Frequent engagement in sports and fantasy gambling strongly predicts higher gambling problem severity.</li>
+            <li>Mental health factors: higher depression and lower anxiety correlate with greater risk in 18–25 year-old men.</li>
+            <li>This pattern suggests a possible <strong>self-medication loop</strong>, where gambling becomes a coping mechanism.</li>
+          </ul>
+
+          <h3 class="small">2. Design &amp; Technology of Betting Platforms</h3>
+          <ul class="bullets">
+            <li><strong>Frictionless mobile apps</strong> provide instant feedback, in-play betting, and constant notifications — all drivers of impulsive wagering.</li>
+            <li>Micro-bets (e.g., on single plays) create a high frequency of reinforcing events that resemble video games more than traditional wagering.</li>
+          </ul>
+
+          <h3 class="small">3. Social &amp; Cultural Factors</h3>
+          <ul class="bullets">
+            <li>Young men are more likely to follow live sports, participate in peer networks around betting, and see aggressive marketing.</li>
+            <li>Celebrity endorsements and "risk-free" offers normalize betting and downplay real financial risk.</li>
+          </ul>
+
+          <h2>The Toll: Beyond Money</h2>
+          <p>The consequences of sports gambling addiction extend beyond lost funds. Problem gamblers frequently face <strong>anxiety, depression, shame, and social isolation</strong>. Relationships break down under debt stress, and public health systems — already under strain — see rising demand for treatment. Access to addiction services is uneven across states, and not all jurisdictions require operators to fund prevention and treatment.</p>
+
+          <h2>A Regulatory Reckoning</h2>
+          <p>In response to these trends, policymakers and advocates are pushing reforms across three main areas:</p>
+
+          <h3 class="small">Advertising limits</h3>
+          <ul class="bullets">
+            <li>Restrict misleading language like “risk-free” or “no-sweat” promotions.</li>
+            <li>Limit the volume and timing of advertisements, especially during live broadcasts.</li>
+          </ul>
+
+          <h3 class="small">Product feature reforms</h3>
+          <ul class="bullets">
+            <li>Implement cooling-off delays to slow impulsive in-play bets.</li>
+            <li>Require affordability checks to prevent wagers beyond a user’s capacity to pay.</li>
+          </ul>
+
+          <h3 class="small">Treatment &amp; support funding</h3>
+          <ul class="bullets">
+            <li>Mandate operator contributions to fund state treatment programs and 24/7 digital support.</li>
+            <li>Expand self-exclusion, helplines, and peer support networks.</li>
+          </ul>
+
+          <h2>Why This Matters Now</h2>
+          <p>The rapid adoption of mobile betting means these harms are unfolding fast. Young men — already predisposed to higher risk because of behavioral, economic, and technological factors — face disproportionate consequences. Without stronger consumer protections, more lives may be destabilized by debt, addiction, and mental-health crises.</p>
+
+          <h2>What Can Be Done</h2>
+          <ul class="bullets">
+            <li><strong>Policymakers:</strong> Enact advertising restrictions, product oversight, and mandatory treatment funding.</li>
+            <li><strong>Public health advocates:</strong> Invest in prevention, research, and targeted outreach for young men.</li>
+            <li><strong>Individuals & families:</strong> Learn the warning signs, use self-exclusion tools, and seek help early.</li>
+            <li><strong>Gambling companies:</strong> Adopt harm-reduction measures, affordability checks, and transparent practices.</li>
+          </ul>
+
+          <p class="small">If you or someone you know has a gambling problem, call or text the National Problem Gambling Helpline at <strong>1-800-522-4700</strong>.</p>
+        </article>
+
+        <aside class="side-panel" aria-label="Interactive tools and resources">
+          <div class="card" id="helpCard">
+            <h3 style="margin:0 0 8px 0; color:var(--header-bg)">Quick Actions</h3>
+            <p class="small">Useful tools for readers who want to share, save, or act.</p>
+            <div class="cta">
+              <button class="btn" onclick="shareArticle()">Share</button>
+              <button class="ghost" onclick="navigator.clipboard?.writeText(window.location.href).then(()=>alert('Page link copied'))">Copy Link</button>
+              <button class="ghost" onclick="printArticle()">Print</button>
+            </div>
+
+            <div style="margin-top:12px;">
+              <details class="collapsible">
+                <summary>Get immediate help</summary>
+                <div style="padding:12px">
+                  <p class="small">If you need help now, call/text: <strong>1-800-522-4700</strong></p>
+                  <p class="small">You can also email a local counselor or find state resources on the Sources panel.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="card" id="quizCard">
+            <h3 style="margin:0 0 8px 0; color:var(--header-bg)">Short Self-Check Quiz</h3>
+            <p class="small">Answer a few quick questions — this is not a diagnosis but a prompt to seek help if results are concerning.</p>
+            <div id="quiz">
+              <div class="quiz-question">
+                <label><strong>1.</strong> Have you felt the need to bet with increasing amounts of money to get the same feeling?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q1" value="0"> No</label>
+                  <label><input type="radio" name="q1" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q1" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label><strong>2.</strong> Have you tried to stop or cut down but failed?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q2" value="0"> No</label>
+                  <label><input type="radio" name="q2" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q2" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label><strong>3.</strong> Have you chased losses (bet more to try to recover previous losses)?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q3" value="0"> No</label>
+                  <label><input type="radio" name="q3" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q3" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div class="quiz-question">
+                <label><strong>4.</strong> Has gambling caused problems with relationships, work, or finances?</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="q4" value="0"> No</label>
+                  <label><input type="radio" name="q4" value="1"> Sometimes</label>
+                  <label><input type="radio" name="q4" value="2"> Often</label>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:8px; margin-top:8px;">
+                <button class="btn" onclick="evaluateQuiz()">See Result</button>
+                <button class="ghost" onclick="resetQuiz()">Reset</button>
+              </div>
+
+              <div id="quizResult" aria-live="polite" style="margin-top:10px"></div>
+            </div>
+          </div>
+
+          <div class="card" id="ctaSources">
+            <h3 style="margin:0 0 8px 0; color:var(--header-bg)">Sources & More</h3>
+            <p class="small">Click <button class="ghost" style="padding:6px 8px; font-size:13px" onclick="document.getElementById('sourcesModal').style.display='flex'">Sources</button> to review studies, polling, and reporting cited in this article.</p>
+          </div>
+
+        </aside>
+      </div>
+
+      <hr style="margin:18px 0; border:none; height:1px; background:linear-gradient(90deg, transparent, rgba(16,32,55,0.06), transparent)">
+
+      <section aria-labelledby="authorHeader">
+        <h2 id="authorHeader">About this report</h2>
+        <p>This piece synthesizes polling, working papers, and peer-reviewed research to describe trends in online sports betting and the public health implications for young men. For immediate assistance, call/text the National Problem Gambling Helpline at <strong>1-800-522-4700</strong>.</p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container" style="max-width:var(--max-width)">
+        <p>© <span id="year"></span> [Your Name / Outlet Name] • Built for clarity and accessibility</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Sources modal -->
+  <div id="sourcesModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" aria-labelledby="sourcesTitle">
+      <button class="close" onclick="document.getElementById('sourcesModal').style.display='none'">✕</button>
+      <h3 id="sourcesTitle">Sources & Further Reading</h3>
+      <p class="small">Selected studies, reporting, and commentary cited in the article. (Open in a new tab.)</p>
+      <ul>
+        <li><a href="https://apnews.com/article/d4d0b7a8465e5be0b451b115cab0fb15" target="_blank" rel="noopener">AP News: Poll showing higher risk for young men (Fairleigh Dickinson University)</a></li>
+        <li><a href="https://link.springer.com/article/10.1007/s10899-025-10403-0" target="_blank" rel="noopener">Journal article: Longitudinal study on young men's gambling risk (Springer)</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/37283029/" target="_blank" rel="noopener">PubMed: Study of gambling among young athletes</a></li>
+        <li><a href="https://www.anderson.ucla.edu/sites/default/files/document/2025-05/Hollenbeck_The_Financial_Consequences_of_Legalized_Sports_Gambling.pdf" target="_blank" rel="noopener">Working paper: Financial consequences of legalized sports gambling (Hollenbeck, Larsen & Proserpio)</a></li>
+        <li><a href="https://www.washingtonpost.com/opinions/2024/09/14/nfl-sports-gambling-addiction-sportsbooks-credit-scores/" target="_blank" rel="noopener">Washington Post: Opinion on credit impacts</a></li>
+        <li><a href="https://www.pewresearch.org/short-reads/2025/10/02/americans-increasingly-see-legal-sports-betting-as-a-bad-thing-for-society-and-sports/" target="_blank" rel="noopener">Pew Research Center: Public attitudes toward sports betting</a></li>
+      </ul>
+      <p class="small">If you want all sources exported to a printable PDF or to have the sources formatted as newsroom citations (AP/Chicago), I can prepare that too.</p>
+      <div style="text-align:right; margin-top:8px">
+        <button class="btn" onclick="document.getElementById('sourcesModal').style.display='none'">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple print helper
+    function printArticle(){
+      window.print();
+    }
+
+    // share (uses Web Share API if available)
+    function shareArticle(){
+      const shareData = {
+        title: document.title,
+        text: 'Read: The Big Bet Backfires — sports betting addiction among young men',
+        url: window.location.href
+      };
+      if(navigator.share){
+        navigator.share(shareData).catch(()=>alert('Unable to share from this browser.'));
+      } else {
+        navigator.clipboard?.writeText(window.location.href).then(()=>{
+          alert('Link copied to clipboard');
+        }).catch(()=>alert('Share not supported. Link copied?'));
+      }
+    }
+
+    // quiz logic (very simple, not diagnostic)
+    function evaluateQuiz(){
+      const answers = ['q1','q2','q3','q4'].map(name => {
+        const selected = document.querySelector('input[name="'+name+'"]:checked');
+        return selected ? parseInt(selected.value,10) : 0;
+      });
+      const total = answers.reduce((a,b)=>a+b,0);
+      const resultEl = document.getElementById('quizResult');
+      resultEl.innerHTML = '';
+      let markup = '';
+      if(total <= 2){
+        markup = '<div class="result low"><strong>Low/Minimal concerns</strong><p class="small">Your responses suggest low immediate concern. Continue to monitor your behaviour. If you ever worry, reach out to trusted friends/family or the helpline.</p></div>';
+      } else if(total <= 5){
+        markup = '<div class="result medium"><strong>Moderate concerns</strong><p class="small">Your responses indicate some risky patterns. Consider setting firm betting limits, using self-exclusion tools, and speaking with someone you trust. The helpline number is available if needed.</p></div>';
+      } else {
+        markup = '<div class="result high"><strong>High concerns</strong><p class="small">Your answers point to behaviours commonly associated with problem gambling. Please consider contacting professional help or the National Problem Gambling Helpline (1-800-522-4700) and look into self-exclusion tools immediately.</p></div>';
+      }
+      resultEl.innerHTML = markup;
+      resultEl.scrollIntoView({behavior:'smooth'});
+    }
+
+    function resetQuiz(){
+      document.querySelectorAll('#quiz input[type="radio"]').forEach(r=>r.checked=false);
+      document.getElementById('quizResult').innerHTML = '';
+    }
+
+    // accessibility: close modal with Esc and click backdrop
+    document.getElementById('sourcesModal').addEventListener('click', function(e){
+      if(e.target === this) this.style.display = 'none';
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        const modal = document.getElementById('sourcesModal');
+        if(modal.style.display === 'flex') modal.style.display = 'none';
+      }
+    });
+
+    // ensure modal is 'flex' when opened
+    const realModal = document.getElementById('sourcesModal');
+    const observer = new MutationObserver(()=> {
+      if(realModal.style.display === 'flex') {
+        realModal.setAttribute('aria-hidden','false');
+        realModal.style.display = 'flex';
+        realModal.style.alignItems = 'center';
+        realModal.style.justifyContent = 'center';
+      } else {
+        realModal.setAttribute('aria-hidden','true');
+      }
+    });
+    observer.observe(realModal, {attributes:true, attributeFilter:['style']});
+
+    function scrollToTop(e){
+      if(e) e.preventDefault();
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
